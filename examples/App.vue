@@ -1,14 +1,13 @@
 <template>
-  <div id="app">
-    <md-typo type="none">
-      <div>a</div>
-    </md-typo>
-    <md-icon name="vpn_key"></md-icon>
-  </div>
+  <md-row>
+    <md-col :span="4">md-col-4</md-col>
+    <md-col :offset="5">md-col-4</md-col>
+  </md-row>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
+import 'mdui/dist/css/mdui.min.css'
 
 @Component
 export default class App extends Vue {

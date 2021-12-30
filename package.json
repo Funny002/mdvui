@@ -13,7 +13,6 @@
     "lib": "vue-cli-service build --target lib --name mdvui ./index.ts"
   },
   "dependencies": {
-    "mdui": "^1.0.2",
     "vue": "^2.6.11",
     "core-js": "^3.6.5",
     "vue-class-component": "^7.2.3",
@@ -29,6 +28,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "mdui": "^1.0.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
