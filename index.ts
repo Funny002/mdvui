@@ -1,11 +1,15 @@
-import {VueConstructor} from 'vue'
+import Vue, {VueConstructor} from 'vue'
+import 'mdui/dist/css/mdui.min.css'
 
-const components: { [Key: string]: VueConstructor } = {}
+import Typo from './components/typo'
+import Icon from './components/icon'
 
-const install = function (vue: VueConstructor): void {
+const components: { [Key: string]: VueConstructor } = {Typo, Icon}
+
+const install = function (vue: typeof Vue): void {
   Object.keys(components).forEach((key: string) => {
     const model = components[key]
-    vue.component(model.name, model)
+    vue.component('Md' + model.name, model)
   })
 }
 

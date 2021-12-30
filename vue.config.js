@@ -3,9 +3,9 @@ const sourceMap = false
 module.exports = {
   pages: {
     index: {
-      title: 'pdfjs-vue',
+      title: 'mdvui',
       filename: 'index.html',
-      entry: './examples/main.js',
+      entry: './examples/main.ts',
       template: './examples/index.html'
     }
   },

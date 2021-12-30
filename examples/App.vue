@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <md-typo type="none">
+      <div>a</div>
+    </md-typo>
+    <md-icon name="vpn_key"></md-icon>
   </div>
 </template>
 

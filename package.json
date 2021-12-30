@@ -5,12 +5,12 @@
   "version": "0.0.1",
   "private": false,
   "license": "MIT",
-  "main": "index.ts",
+  "main": "./dist/mdvui.umd.min.js",
   "scripts": {
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service bulid --target lib --name mdvui"
+    "lib": "vue-cli-service build --target lib --name mdvui ./index.ts"
   },
   "dependencies": {
     "mdui": "^1.0.2",
