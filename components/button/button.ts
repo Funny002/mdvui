@@ -26,6 +26,7 @@ export default class Button extends Vue {
     if (this.raised) classes.push('mdui-btn-raised')
     if (this.disabled) classes.push('mdui-btn-disabled')
     if (this.type !== 'button') classes.push('mdui-btn-' + this.type)
-    return h('button', {class: classes.join(' ')}, slotText(this.$slots.default || []))
+    const on = this.$listeners ? {...this.$listeners} : {}
+    return h('button', {class: classes.join(' '), on}, slotText(this.$slots.default || []))
   }
 }

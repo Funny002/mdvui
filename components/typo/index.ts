@@ -34,7 +34,8 @@ export default class Typo extends Vue {
 
   render (h: CreateElement): VNode {
     const {size, type, opacity} = this
+    const on = this.$listeners ? {...this.$listeners} : {}
     const classes = 'none' === type ? 'mdui-typo' : getClass({size, type, opacity})
-    return h('div', {class: classes}, [this.$slots.default])
+    return h('div', {class: classes, on}, [this.$slots.default])
   }
 }
