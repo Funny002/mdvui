@@ -2,7 +2,7 @@
   "name": "mdvui",
   "description": "Material Design Vue User Interface",
   "author": "Funny002 <funnydsu@gmail.com>",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "license": "MIT",
   "typings": "types/index.d.ts",
