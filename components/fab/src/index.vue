@@ -20,7 +20,7 @@
 import Mixins     from '../../Mixins'
 import {PropItem} from '../../Utils'
 import MdIcon     from '../../icon/src'
-import ripple     from '../../ripple'
+import ripple     from '../../../directives/ripple'
 
 export default {
   name: 'MdFab',

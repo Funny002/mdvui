@@ -1,6 +1,9 @@
 const sourceMap = false
 
 module.exports = {
+  configureWebpack: {
+    devtool: 'source-map'
+  },
   pages: {
     index: {
       title: 'mdvui',

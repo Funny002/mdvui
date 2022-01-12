@@ -1,40 +1,32 @@
 <template>
   <md-row>
-    <md-select style="margin-left: 100px;">
-      <md-select-option-group label="xxx">
-        <md-select-option value="ccc">ccc</md-select-option>
-        <md-select-option value="xxx">xxx</md-select-option>
-      </md-select-option-group>
-      <md-select-option value="aaa">aaa</md-select-option>
-      <md-select-option value="bbb" selected>bbb</md-select-option>
-    </md-select>
-    <div style="height: 20px;"></div>
-    <md-divider></md-divider>
-    <div style="height: 20px;"></div>
-    <md-panel accordion popout gapless>
-      <md-panel-item open label="xx">
-        <div slot="summary" class="mdui-panel-item-summary">summary</div>
-        <div slot="summary" class="mdui-panel-item-summary">summary</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-      </md-panel-item>
-      <md-panel-item open label="xx">
-        <div slot="summary" class="mdui-panel-item-summary">summary</div>
-        <div slot="summary" class="mdui-panel-item-summary">summary</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-        <div>xxxxxxxxxxxxxxxxxx</div>
-      </md-panel-item>
-    </md-panel>
-    {{ textfield }}
-    <md-textfield label="label" v-model="textfield" @focus="onfocus" @input="onInput" helper="xxxx"/>
+    <div class="">
+      <h3>switch</h3>
+      <div> {{ switchValue }}</div>
+      <md-switch v-model="switchValue" :on-value="true" :off-value="0">switch</md-switch>
+    </div>
+    <div class="">
+      <h3>radio</h3>
+      <div> {{ radioValue }}</div>
+      <md-radio v-model="radioValue" label="true">true</md-radio>
+      <md-radio v-model="radioValue" label="false">false</md-radio>
+    </div>
+    <div class="">
+      <h3>checkbox</h3>
+      <div> {{ checkboxValue }}</div>
+      <md-checkbox v-model="checkboxValue" label="true">true</md-checkbox>
+      <md-checkbox v-model="checkboxValue" label="false" indeterminate>false</md-checkbox>
+    </div>
+    <div>
+      <h3>textfield</h3>
+      {{ textfieldValue || ' ' }}
+      <md-textfield v-model="textfieldValue" label="label"/>
+    </div>
+    <div>
+      <h3>slider</h3>
+      {{ sliderValue }}
+      <md-slider v-model="sliderValue" discrete/>
+    </div>
   </md-row>
 </template>
 
@@ -45,14 +37,18 @@ import 'mdui'
 
 @Component({})
 export default class App extends Vue {
-  textfield = ''
+  switchValue = 0
+  sliderValue = 0
+  radioValue = ''
+  textfieldValue = ''
+  checkboxValue = true
 
-  onInput (e: Event): void {
-    console.log('onInput', e)
-  }
-
-  onfocus (e: Event): void {
-    console.log('onfocus', e)
+  onRules (value: unknown): Error | unknown {
+    if (!value) {
+      return new Error('不能为空')
+    } else {
+      console.log(value)
+    }
   }
 }
 </script>

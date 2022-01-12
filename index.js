@@ -1,38 +1,17 @@
-import MdCol               from './components/col'
-import MdRow               from './components/row'
-import MdFab               from './components/fab'
-import MdTypo              from './components/typo'
-import MdIcon              from './components/icon'
-import MdPanel             from './components/panel'
-import MdButton            from './components/button'
-import MdSelect            from './components/select'
-import MdDivider           from './components/divider'
-import MdFabItem           from './components/fab-item'
-import MdTextfield         from './components/textfield'
-import MdPanelItem         from './components/panel-item'
-import MdButtonGroup       from './components/button-group'
-import MdSelectOption      from './components/select-option'
-import MdSelectOptionGroup from './components/select-option-group'
+/**
+ * 懒的自己去引入了
+ * 全部封装完了在改
+ * */
+const CContexts = require.context('./components/', true, /\/index\.js$/)
 
-const components = {
-  MdCol,
-  MdRow,
-  MdFab,
-  MdTypo,
-  MdIcon,
-  MdPanel,
-  MdButton,
-  MdSelect,
-  MdDivider,
-  MdFabItem,
-  MdTextfield,
-  MdPanelItem,
-  MdButtonGroup,
-  MdSelectOption,
-  MdSelectOptionGroup
-}
+const components = CContexts.keys().reduce(function (components, path) {
+  const models = CContexts(path)
+  const name = models.name || models.default.name
+  components[name] = models.default || models
+  return components
+}, {})
 
-import ripple from './components/ripple'
+import ripple from './directives/ripple'
 
 const directives = {ripple}
 
